@@ -1,0 +1,24 @@
+plugins {
+    id 'groovy'
+    id 'maven'
+}
+
+group 'com.stats'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('./repo'))
+        }
+    }
+}
